@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+  <meta name="theme-color" content="#040817" />
+  <meta name="description" content="Official 6-Digit Lottery Number Verification Portal for Barpeta Road Sri Sri Radha Krishna Raas Mahotsav" />
+  <title>Barpeta Road Raas Mahotsav - 6-Digit Lottery Verification Portal</title>
+  <link rel="shortcut icon" href="RashWeb/favicon.png" type="image/x-icon">
+
+  <style>
+    /* ==========================================================================
+       ===== EASY CUSTOMIZATION AREA (CSS) =====
+       ========================================================================== */
+    :root {
+      /* Background Image */
+      --bg-image-url: url('https://ghantee.com/wp-content/uploads/2025/12/most-beautiful-radhe-krishna-wallpaper-W-768x432.jpg.webp');
+
+      /* Deep Festive Midnight Blue Palette */
+      --bg-dark-base: #040817;
+      --bg-glass-nav: rgba(6, 14, 34, 0.8);
+      --bg-glass-card: rgba(10, 20, 48, 0.65);
+      --bg-glass-card-hover: rgba(15, 29, 68, 0.75);
+
+      /* Glass Borders & Blue-Gold Neon Highlights */
+      --border-subtle: rgba(56, 189, 248, 0.18);
+      --border-gold: rgba(245, 158, 11, 0.45);
+      --border-blue: rgba(59, 130, 246, 0.35);
+
+      /* Accent Colors */
+      --accent-gold: #fbbf24;
+      --accent-gold-glow: rgba(251, 191, 36, 0.35);
+      --accent-cyan: #38bdf8;
+      --accent-blue: #3b82f6;
+
+      /* Status Colors */
+      --success-green: #10b981;
+      --success-glow: rgba(16, 185, 129, 0.45);
+      --error-red: #f43f5e;
+
+      /* Typography */
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      --text-gold: #fde68a;
+
+      /* Smooth Curvature Radii */
+      --radius-pill: 9999px;
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+
+      --header-height: 68px;
+      --container-max-width: 1080px;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      background-color: var(--bg-dark-base);
+      color: var(--text-main);
+      color-scheme: dark;
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      width: 100%;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    /* Multi-layer Background */
+    .bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-color: var(--bg-dark-base);
+      background-image: var(--bg-image-url);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      filter: blur(14px) brightness(0.22);
+      transform: scale(1.08);
+      pointer-events: none;
+    }
+
+    .bg-overlay-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.24), transparent 55%),
+                  radial-gradient(circle at 10% 35%, rgba(14, 165, 233, 0.16), transparent 45%),
+                  radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.14), transparent 50%),
+                  linear-gradient(180deg, rgba(4, 8, 23, 0.72) 0%, rgba(4, 8, 23, 0.98) 100%);
+      pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max-width);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 0.85rem;
+      }
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: var(--bg-glass-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 10px 35px -5px rgba(2, 6, 23, 0.65), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+    }
+
+    /* Buttons */
+    .btn-pill-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 52px;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+      color: #0b0f19;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .btn-pill-primary:hover, .btn-pill-primary:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      filter: brightness(1.06);
+      outline: none;
+    }
+
+    .btn-pill-primary:active {
+      transform: translateY(1px);
+    }
+
+    .btn-pill-primary:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-pill-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 48px;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-pill-secondary:hover, .btn-pill-secondary:focus-visible {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-height);
+      background: var(--bg-glass-nav);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 8px;
+    }
+
+    .back-btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .back-btn-pill:hover, .back-btn-pill:focus-visible {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateX(-2px);
+      outline: none;
+    }
+
+    .header-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .header-logo-img {
+      height: 38px;
+      width: auto;
+      max-width: 110px;
+      object-fit: contain;
+      border-radius: 6px;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+      flex-shrink: 0;
+    }
+
+    .header-brand-text {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      overflow: hidden;
+    }
+
+    .header-badge-live {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .header-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-gold);
+      display: inline-block;
+    }
+
+    .header-title-main {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 440px) {
+      .header-brand-text {
+        display: none;
+      }
+      .header-logo-img {
+        height: 34px;
+      }
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      text-align: center;
+      padding: 1.2rem 0.5rem 0;
+    }
+
+    .festive-logo-container {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      position: relative;
+      max-width: 100%;
+    }
+
+    .festive-hero-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 95px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.3));
+      border-radius: var(--radius-md);
+      transition: transform 0.3s ease;
+    }
+
+    main {
+      padding: 1.2rem 0 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    /* 6-Digit Lottery Checker */
+    .checker-section {
+      position: relative;
+      width: 100%;
+    }
+
+    .checker-card {
+      padding: 1.8rem 1rem;
+      border: 1px solid var(--border-gold);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 15px 45px rgba(2, 6, 23, 0.7), 0 0 35px rgba(37, 99, 235, 0.12);
+    }
+
+    .checker-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(37, 99, 235, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .checker-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.35rem;
+      line-height: 1.3;
+    }
+
+    .checker-subtitle {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      max-width: 500px;
+      margin: 0 auto 1.4rem;
+      line-height: 1.45;
+    }
+
+    /* 6 Individual Inputs */
+    .digit-inputs-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(6px, 2vw, 12px);
+      margin: 0 auto 1.2rem;
+      max-width: 380px;
+      width: 100%;
+      padding: 0 2px;
+    }
+
+    .digit-box {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 54px;
+      height: clamp(50px, 14vw, 64px);
+      background: rgba(6, 14, 34, 0.85);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      color: #ffffff;
+      font-size: clamp(1.4rem, 5.5vw, 2rem);
+      font-weight: 800;
+      text-align: center;
+      caret-color: var(--accent-gold);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+      appearance: textfield;
+      padding: 0;
+    }
+
+    .digit-box::-webkit-outer-spin-button,
+    .digit-box::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .digit-box:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      background: rgba(12, 26, 60, 0.95);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25), 0 0 16px rgba(245, 158, 11, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .digit-box.filled {
+      border-color: rgba(245, 158, 11, 0.75);
+      background: rgba(15, 29, 68, 0.92);
+      color: #fde68a;
+    }
+
+    .paste-hint {
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      margin-top: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .validation-error {
+      display: none;
+      color: #fb7185;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.6rem;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .checker-action-wrap {
+      max-width: 340px;
+      margin: 1.3rem auto 0;
+    }
+
+    .scanner-wrap {
+      display: none;
+      margin: 1.3rem auto 0;
+      padding: 1rem;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px dashed var(--accent-cyan);
+      border-radius: var(--radius-md);
+      max-width: 420px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .scanner-text {
+      font-size: 0.86rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .scanner-bar {
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), #ffffff, var(--accent-cyan), transparent);
+      margin-top: 8px;
+      border-radius: var(--radius-pill);
+      position: relative;
+      animation: scanLaser 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes scanLaser {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Result Cards */
+    .result-container {
+      margin-top: 1.6rem;
+      display: none;
+      width: 100%;
+    }
+
+    .result-card-winning {
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.22) 0%, rgba(4, 24, 18, 0.95) 100%);
+      border: 2px solid var(--success-green);
+      border-radius: var(--radius-xl);
+      padding: 1.8rem 1rem;
+      box-shadow: 0 0 45px var(--success-glow);
+      text-align: center;
+      animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .win-badge-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 0.8rem;
+      background: var(--success-green);
+      color: #062319;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.8);
+      animation: pulseGlow 1.8s infinite ease-in-out;
+    }
+
+    .win-headline {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #34d399;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.2rem;
+    }
+
+    .win-subheadline {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+    }
+
+    .win-prize-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0.6rem 0 0.4rem;
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    /* Responsive Car Vehicle Winning Frame with Smooth Rounded Corners */
+    .win-prize-image-wrap {
+      width: 100%;
+      max-width: 440px;
+      margin: 1rem auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: rgba(3, 8, 20, 0.7);
+      border: 1.5px solid rgba(16, 185, 129, 0.45);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+
+    .win-prize-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .win-number-pill {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1.5px solid rgba(16, 185, 129, 0.5);
+      padding: 0.35rem 1.2rem;
+      border-radius: var(--radius-pill);
+      font-family: monospace;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #a7f3d0;
+      margin: 0.6rem 0;
+    }
+
+    .win-desc {
+      font-size: 0.9rem;
+      color: #d1fae5;
+      max-width: 480px;
+      margin: 0.4rem auto 1.2rem;
+      line-height: 1.45;
+    }
+
+    .win-guidance-box {
+      background: rgba(0, 0, 0, 0.45);
+      border-left: 4px solid var(--success-green);
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-sm);
+      text-align: left;
+      margin: 1rem auto 1.4rem;
+      max-width: 480px;
+      font-size: 0.85rem;
+      color: #ecfdf5;
+      line-height: 1.45;
+    }
+
+    .result-card-losing {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 1.6rem 1rem;
+      text-align: center;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .lose-headline {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.3rem;
+    }
+
+    .lose-subheadline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+      line-height: 1.45;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Draw Details & Information Cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      width: 100%;
+    }
+
+    .info-card {
+      padding: 1.4rem 1.1rem;
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .info-card-icon {
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(37, 99, 235, 0.16);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-md);
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+
+    .info-card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .info-meta-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-meta-item {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.65rem 0.8rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .info-meta-label {
+      font-size: 0.72rem;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .info-meta-value {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+      word-break: break-word;
+    }
+
+    .rules-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .rules-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.45;
+    }
+
+    .rules-list li::before {
+      content: '✦';
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+
+    /* Official Draw Notices & Certificate Gallery Grid */
+    .section-heading-wrap {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+
+    .images-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      width: 100%;
+    }
+
+    .image-card {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      border-radius: var(--radius-xl);
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: rgba(3, 7, 20, 0.75);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-subtle);
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+
+    .image-container:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.2);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.03);
+    }
+
+    .image-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(6, 14, 34, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 5px 11px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      border: 1px solid var(--border-subtle);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .image-caption {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(2, 6, 18, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-img-wrap {
+      position: relative;
+      max-width: 92vw;
+      max-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: -42px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .lightbox-close-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Claim Steps */
+    .claim-steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    .claim-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .step-badge {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      background: rgba(37, 99, 235, 0.18);
+      border: 1px solid var(--border-blue);
+      color: var(--accent-cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      border-color: var(--border-gold);
+    }
+
+    .contact-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-message {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 1.3rem;
+      line-height: 1.45;
+    }
+
+    .contact-channels-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .contact-link-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      color: var(--text-main);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      min-width: 0;
+    }
+
+    .contact-link-pill:hover, .contact-link-pill:focus-visible {
+      background: rgba(37, 99, 235, 0.16);
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .contact-icon-box {
+      width: 38px;
+      height: 38px;
+      background: rgba(37, 99, 235, 0.16);
+      border: 1px solid var(--border-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+
+    .contact-info-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .contact-label {
+      font-size: 0.68rem;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .contact-disclaimer {
+      margin-top: 1.2rem;
+      padding: 0.75rem 1rem;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      color: #fde68a;
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.8rem 0;
+      background: rgba(3, 7, 20, 0.96);
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+      line-height: 1.5;
+    }
+
+    .footer-trust-notice {
+      max-width: 640px;
+      margin: 0 auto 0.6rem;
+      color: var(--text-muted);
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.92); }
+      70% { transform: scale(1.02); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.5); }
+      50% { box-shadow: 0 0 32px rgba(16, 185, 129, 0.95); }
+    }
+
+    /* Responsive Breakpoints */
+    @media (min-width: 640px) {
+      .checker-card {
+        padding: 2.4rem 1.8rem;
+      }
+      .checker-title {
+        font-size: 1.75rem;
+      }
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .images-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-channels-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      main {
+        gap: 2.5rem;
+        padding-top: 1.8rem;
+      }
+      .checker-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Background Layers -->
+  <div class="bg-canvas" aria-hidden="true"></div>
+  <div class="bg-overlay-gradient" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="back-btn-pill" aria-label="Go back to home page">
+        <span aria-hidden="true">←</span>
+        <span>Back</span>
+      </a>
+
+      <!-- Page Title & Brand Logo -->
+      <div class="header-brand-wrap">
+        <img src="RashWeb/Gemini_Generated_Image_whwav4whwav4whwa.png" 
+             alt="Barpeta Road Raas Mahotsav Logo" 
+             class="header-logo-img" 
+             onerror="this.style.display='none'" />
+        <div class="header-brand-text">
+          <span class="header-badge-live">
+            <span class="header-dot" aria-hidden="true"></span> Official Verification
+          </span>
+          <span class="header-title-main" id="display-lottery-name-header">Barpeta Road Raas Mahotsav</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Festive Branding Section -->
+  <section class="hero-banner container" aria-label="Raas Mahotsav Lottery Title">
+    <div class="festive-logo-container">
+      <img src="RashWeb/maintext.png" 
+           alt="Sri Sri Radha Krishna Raas Mahotsav Barpeta Road" 
+           class="festive-hero-img" 
+           onerror="this.style.display='none'" />
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- ==========================================================================
+         SECTION 1: 6-Digit Lottery Number Checker
+         ========================================================================== -->
+    <section class="checker-section" aria-labelledby="checker-heading">
+      <div class="glass-card checker-card">
+        
+        <h2 id="checker-heading" class="checker-title">Will Active From 12 Dec 2026 10PM</h2>    <!-- CHECK YOUR LOTTERY NUMBER -->
+        <p class="checker-subtitle">Enter your 6-digit lottery number to check your prize result.</p>
+
+        <!-- 6 Individual Responsive Digit Inputs -->
+        <form id="lottery-form" novalidate onsubmit="return false;">
+          <div class="digit-inputs-wrap" role="group" aria-label="6-digit lottery number input boxes">
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="digit-box" data-index="0" aria-label="Digit 1" autocomplete="off" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="digit-box" data-index="1" aria-label="Digit 2" autocomplete="off" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="digit-box" data-index="2" aria-label="Digit 3" autocomplete="off" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="digit-box" data-index="3" aria-label="Digit 4" autocomplete="off" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="digit-box" data-index="4" aria-label="Digit 5" autocomplete="off" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="digit-box" data-index="5" aria-label="Digit 6" autocomplete="off" />
+          </div>
+
+          <p class="paste-hint">💡 Tip: You can paste your entire 6-digit ticket number directly into any box.</p>
+          <div id="validation-error" class="validation-error" role="alert">Please enter all 6 digits completely.</div>
+
+          <div class="checker-action-wrap">
+            <button type="button" id="btn-check" class="btn-pill-primary">
+              <span aria-hidden="true">🔍</span>
+              <span>CHECK MY NUMBER</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Scanner Simulation Box -->
+        <div id="scanner-wrap" class="scanner-wrap" aria-live="polite">
+          <div class="scanner-text">
+            <span>⚡ Verifying with Official Raas Mahotsav Draw Records...</span>
+          </div>
+          <div class="scanner-bar" aria-hidden="true"></div>
+        </div>
+
+        <!-- Result Container -->
+        <div id="result-container" class="result-container" aria-live="assertive"></div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: Official Draw Notices & Certificates
+         ========================================================================== -->
+    <section aria-labelledby="gallery-heading">
+      <div class="section-heading-wrap">
+        <h2 id="gallery-heading" class="section-title">Official Draw Notices & Certificates</h2>
+      </div>
+      <div class="images-grid">
+        
+        <!-- Certificate Image 1 -->
+        <div class="glass-card image-card">
+          <div class="image-container" onclick="openLightbox('RashWeb/ticketF.jpg', 'Official Raas Mahotsav Draw Notice & Schedule')" tabindex="0" role="button" aria-label="Enlarge Draw Certificate">
+            <img src="RashWeb/ticketF.jpg" alt="Official Raas Mahotsav Draw Notice & Schedule" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'350\' viewBox=\'0 0 600 350\'><rect fill=\'%230b1736\' width=\'100%25\' height=\'100%25\'/><text fill=\'%2338bdf8\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' font-size=\'16\'>Draw Certificate (Tap to Zoom)</text></svg>'" />
+            <span class="image-badge">🔍 Tap to Zoom</span>
+          </div>
+          <p class="image-caption">Official Raas Mahotsav Draw Notice & Schedule</p>
+        </div>
+
+        <!-- Certificate Image 2 -->
+        <div class="glass-card image-card">
+          <div class="image-container" onclick="openLightbox('RashWeb/ticketB.jpg', 'Prize Verification Matrix & Authorization Seal')" tabindex="0" role="button" aria-label="Enlarge Prize Matrix">
+            <img src="RashWeb/ticketB.jpg" alt="Prize Verification Matrix & Authorization Seal" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'350\' viewBox=\'0 0 600 350\'><rect fill=\'%230b1736\' width=\'100%25\' height=\'100%25\'/><text fill=\'%2338bdf8\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' font-size=\'16\'>Prize Matrix (Tap to Zoom)</text></svg>'" />
+            <span class="image-badge">🔍 Tap to Zoom</span>
+          </div>
+          <p class="image-caption">Prize Verification Matrix & Authorization Seal</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: Draw Information & Rules
+         ========================================================================== -->
+    <section aria-labelledby="info-heading">
+      <div class="info-grid">
+        
+        <!-- Info Card -->
+        <div class="glass-card info-card">
+          <div class="info-card-header">
+            <div class="info-card-icon" aria-hidden="true">🕉️</div>
+            <h2 id="info-heading" class="info-card-title">Draw Details</h2>
+          </div>
+
+          <div class="info-meta-list">
+            
+            <div class="info-meta-item">
+              <span class="info-meta-label">Draw Venue</span>
+              <span class="info-meta-value" id="disp-draw-venue">Barpeta Road Stadium</span>
+            </div>
+            <div class="info-meta-item">
+              <span class="info-meta-label">Draw Date</span>
+              <span class="info-meta-value" id="disp-draw-date">12 December 2026</span>
+            </div>
+            <div class="info-meta-item">
+              <span class="info-meta-label">Draw Time</span>
+              <span class="info-meta-value" id="disp-draw-time">07:00 PM IST</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;" id="disp-lottery-desc">
+            Organized every year in celebration of Lord Sri Krishna and Radha Rani's divine Raas Leela at Barpeta Road Stadium.  
+          </p>
+        </div>
+
+        <!-- Rules Card -->
+        <div class="glass-card info-card">
+          <div class="info-card-header">
+            <div class="info-card-icon" aria-hidden="true">📜</div>
+            <h2 class="info-card-title">Rules & Guidelines</h2>
+          </div>
+
+          <ul class="rules-list">
+            <li>Original physical ticket must be presented upon claiming.</li>
+            <li>Torn, worn or without hologram ticket (Upahar Patra) will not be accepted.</li>
+            <li>Claims must be initiated within 15 days of the official draw announcement.</li>
+            <li>Winner will have to pay the registration, TCS and insurance fees of the gift car to Upahar Patra Khel Parichalana Committee upon claiming.</li>
+            <li>The results of the lucky draw will be published in Assamese News Paper Pratidin, Dainik Agradoot, Dainik Asom and Niyomiya Barta on Monday morning 14-12-26.</li>
+            <li>Winners must fully comply with government guidelines for accepting gifts and pay the required taxes.</li>
+            <li>The rules and regulations adopted by the Management Committee shall be final and no objections will be accepted.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: Winner Claim Guidance
+         ========================================================================== -->
+    <section aria-labelledby="claim-heading">
+      <div class="glass-card info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon" aria-hidden="true">🏆</div>
+          <h2 id="claim-heading" class="info-card-title">How to Claim Your Prize</h2>
+        </div>
+        <ol class="claim-steps-list">
+          <li class="claim-step-item">
+            <span class="step-badge">1</span>
+            <span>Check that your 6-digit ticket number matches the officially displayed winning number.</span>
+          </li>
+          <li class="claim-step-item">
+            <span class="step-badge">2</span>
+            <span>Keep your original physical lottery ticket safely available along with a valid ID proof.</span>
+          </li>
+          <li class="claim-step-item">
+            <span class="step-badge">3</span>
+            <span>Contact the Barpeta Road Raas Mahotsav committee office using the official contacts below.</span>
+          </li>
+          <li class="claim-step-item">
+            <span class="step-badge">4</span>
+            <span>Follow the official verification and prize handover protocol safely.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: Winner Contact Section
+         ========================================================================== -->
+    <section class="glass-card info-card contact-card" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="contact-title">WON A PRIZE?</h2>
+      <p class="contact-message">
+        If your number is a winning number, please contact us using the official contact details below to claim your prize.
+      </p>
+
+      <div class="contact-channels-grid">
+        <!-- Contact 1 -->
+        <a id="link-phone-1" href="tel:+917002213860" class="contact-link-pill">
+          <div class="contact-icon-box" aria-hidden="true">📞</div>
+          <div class="contact-info-text">
+            <span class="contact-label">Contact 1</span>
+            <span class="contact-val" id="disp-phone-1">+91 70022 13860</span>
+          </div>
+        </a>
+
+        <!-- Contact 2 -->
+        <a id="link-phone-2" href="tel:+918638901212" class="contact-link-pill">
+          <div class="contact-icon-box" aria-hidden="true">📱</div>
+          <div class="contact-info-text">
+            <span class="contact-label">Contact 2</span>
+            <span class="contact-val" id="disp-phone-2">+91 86389 01212</span>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a id="link-email" href="mailto:kulenchoudhury32@gmail.com" class="contact-link-pill">
+          <div class="contact-icon-box" aria-hidden="true">✉️</div>
+          <div class="contact-info-text">
+            <span class="contact-label">Official Email</span>
+            <span class="contact-val" id="disp-email">kulenchoudhury32@gmail.com</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="contact-disclaimer">
+        ⚠️ <strong>Notice:</strong> Please contact us only regarding genuine lottery winnings. Avoid unnecessary calls or messages.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Image Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Enlarged Document Preview" onclick="closeLightbox(event)">
+    <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
+      <button class="lightbox-close-btn" onclick="closeLightbox(event)" aria-label="Close Lightbox">✕</button>
+      <img id="lightbox-img" src="" alt="Enlarged view" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-trust-notice">
+        <strong>Trust & Verification:</strong> Only the officially published winning numbers are valid. Please verify lottery information through the official source before making any claim.
+      </p>
+      <p>© Barpeta Road Rash Mahotsav Committee. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       ===== EASY CUSTOMIZATION AREA (EDIT DETAILS HERE) =====
+       ========================================================================== */
+
+    const LOTTERY_CONFIG = {
+      lotteryName: "Barpeta Road Raas Mahotsav",
+      venue: "Barpeta Road Stadium",
+      heroTitle: "Barpeta Road Raas Mahotsav Lottery",
+      drawDate: "12 December 2026",
+      drawTime: "07:00 PM IST",
+     description: `
+ Organized every year in celebration of Lord Sri Krishna and Radha Rani's divine Raas Leela at Barpeta Road Stadium. 
+
+The Lucky Draw will be held on the last day of the Ras Festival, December 12, 2026 at 7 pm in the presence of about 50 distinguished resource persons from different parts of Barpeta district and countless people of Rash Mela.
+
+ You can watch the lucky draw live on our website at the scheduled time on 12th December, 2026.
+`,
+      contact1: "+91 70022 13860",
+      contact2: "+91 86389 01212",
+      email: "kulenchoudhury32@gmail.com"
+    };
+
+    /**
+     * 13 OFFICIAL RAAS MAHOTSAV PRIZES (6-DIGIT NUMBERS)
+     */
+
+     
+
+    const prizes = [
+      {
+        prize: "1st Prize",
+        number: "0",
+        title: "BMW 218i M Sport Pro",
+        image: "https://img.ricardostatic.ch/images/58f26109-037d-4975-afb1-0a477077b0f0/t_1000x750/vendo-o-subentro-leasing-bmw-218i-gran-coupe-m-sport-pro",
+        description: "Congratulations! You have won the Top 1st Mega Prize — Brand New BMW 218i Gran Coupe!"
+      },
+      {
+        prize: "2nd Prize",
+        number: "0",
+        title: "TOYOTA INNOVA HYCROSS",
+        image: "https://cdni.autocarindia.com/ExtraImages/20221125055341_Hycross%20feature.jpg",
+        description: "Congratulations! You have won the 2nd Prize — TOYOTA INNOVA HYCROSS!"
+      },
+      {
+        prize: "3rd Prize",
+        number: "0",
+        title: "TOYOTA HYRYDER",
+        image: "https://parkplus-bkt-img.parkplus.io/production/chariot_staging/public/exteriorimage169jpgimage_20230808203431737605.jpg",
+        description: "Congratulations! You have won the 3rd Prize — TOYOTA HYRYDER!"
+      },
+      {
+        prize: "4th Prize",
+        number: "0",
+        title: "TATA NEXON",
+        image: "https://gaadiwaadi.com/wp-content/uploads/2023/09/tata-nexon-facelift-21.jpg",
+        description: "Congratulations! You have won the 4th Prize — TATA NEXON!"
+      },
+      {
+        prize: "5th Prize",
+        number: "0",
+        title: "TOYOTA TAISOR",
+        image: "https://assets.tractorjunction.com/car-junction/images/models/1788938263812-Taisor.webp?width=3840&format=webp",
+        description: "Congratulations! You have won the 5th Prize — TOYOTA TAISOR!"
+      },
+      {
+        prize: "6th Prize",
+        number: "0",
+        title: "MARUTI SUZUKI SWIFT LXI",
+        image: "https://tse3.mm.bing.net/th/id/OIP.IocZyX6DS-ucKXH7gARIcQHaDt?r=0&pid=Api&h=220&P=0",
+        description: "Congratulations! You have won the 6th Prize — MARUTI SUZUKI SWIFT!"
+      },
+      {
+        prize: "7th Prize",
+        number: "0",
+        title: "HYUNDAI EXTER",
+        image: "https://imgd.aeplcdn.com/0X0/n/cw/ec/144851/exter-exterior-right-front-three-quarter-21.jpeg?isig=0&q=75",
+        description: "Congratulations! You have won the 7th Prize — HYUNDAI EXTER!"
+      },
+      {
+        prize: "8th Prize",
+        number: "0",
+        title: "TATA AERIS",
+        image: "https://media.zigcdn.com/media/model/2026/Sep/aeris_930x620.jpg?tr=w-1200,h-630",
+        description: "Congratulations! You have won the 8th Prize!"
+      },
+      {
+        prize: "9th Prize",
+        number: "0",
+        title: "MARUTI SUZUKI S-PRESSO",
+        image: "https://images.overdrive.in/wp-content/odgallery/2022/07/63608_2022_Maruti_Suzuki_S-presso.jpg",
+        description: "Congratulations! You have won the 9th Prize — MARUTI SUZUKI S-PRESSO!"
+      },
+      {
+        prize: "10th Prize",
+        number: "0",
+        title: "RENAULT KWID",
+        image: "https://quatrorodas.abril.com.br/wp-content/uploads/2022/05/Renault-Kwid-E-Tech-Eletrico-Brasil-2.jpg?resize=654",
+        description: "Congratulations! You have won the 10th Prize — RENAULT KWID!"
+      },
+      {
+        prize: "11th Prize",
+        number: "0",
+        title: "MARUTI SUZUKI ALTO K10 LXI",
+        image: "https://www.varunmaruti.com/uploads/products/colors/altok-10-solid-white1.png",
+        description: "Congratulations! You have won the 11th Prize — MARUTI ALTO K10!"
+      },
+      {
+        prize: "12th Prize",
+        number: "0",
+        title: "MARUTI SUZUKI ALTO K10 LXI",
+        image: "https://www.varunmaruti.com/uploads/products/colors/altok-10-solid-white1.png",
+        description: "Congratulations! You have won the 12th Prize — MARUTI ALTO K10!"
+      },
+      {
+        prize: "13th Prize",
+        number: "0",
+        title: "MARUTI SUZUKI ALTO K10 LXI",
+        image: "https://www.varunmaruti.com/uploads/products/colors/altok-10-solid-white1.png",
+        description: "Congratulations! You have won the 13th Prize — MARUTI ALTO K10!"
+      }
+    ];
+
+
+
+    /* ==========================================================================
+       DOM Initialization
+       ========================================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+      populateConfigInfo();
+      validateConfigurationIntegrity();
+      setupDigitInputs();
+      setupButtons();
+    });
+
+    function populateConfigInfo() {
+      const headerTitle = document.getElementById("display-lottery-name-header");
+      if (headerTitle) headerTitle.textContent = LOTTERY_CONFIG.lotteryName;
+
+      const nameEl = document.getElementById("disp-lottery-name");
+      if (nameEl) nameEl.textContent = LOTTERY_CONFIG.lotteryName;
+
+      const venueEl = document.getElementById("disp-draw-venue");
+      if (venueEl) venueEl.textContent = LOTTERY_CONFIG.venue;
+
+      const dateEl = document.getElementById("disp-draw-date");
+      if (dateEl) dateEl.textContent = LOTTERY_CONFIG.drawDate;
+
+      const timeEl = document.getElementById("disp-draw-time");
+      if (timeEl) timeEl.textContent = LOTTERY_CONFIG.drawTime;
+
+      const descEl = document.getElementById("disp-lottery-desc");
+      if (descEl) descEl.textContent = LOTTERY_CONFIG.description;
+
+      // Contact 1
+      const p1Disp = document.getElementById("disp-phone-1");
+      const p1Link = document.getElementById("link-phone-1");
+      if (p1Disp && p1Link) {
+        p1Disp.textContent = LOTTERY_CONFIG.contact1;
+        p1Link.href = "tel:" + LOTTERY_CONFIG.contact1.replace(/[^+\d]/g, '');
+      }
+
+      // Contact 2
+      const p2Disp = document.getElementById("disp-phone-2");
+      const p2Link = document.getElementById("link-phone-2");
+      if (p2Disp && p2Link) {
+        p2Disp.textContent = LOTTERY_CONFIG.contact2;
+        p2Link.href = "tel:" + LOTTERY_CONFIG.contact2.replace(/[^+\d]/g, '');
+      }
+
+      // Email
+      const emDisp = document.getElementById("disp-email");
+      const emLink = document.getElementById("link-email");
+      if (emDisp && emLink) {
+        emDisp.textContent = LOTTERY_CONFIG.email;
+        emLink.href = "mailto:" + LOTTERY_CONFIG.email.trim();
+      }
+    }
+
+    function validateConfigurationIntegrity() {
+      const numberMap = new Map();
+      prizes.forEach((p) => {
+        const cleanNum = p.number.trim();
+        if (numberMap.has(cleanNum)) {
+          console.warn(
+            `[Duplicate Warning]: Number "${cleanNum}" is duplicated between "${numberMap.get(cleanNum)}" and "${p.prize}".`
+          );
+        } else {
+          numberMap.set(cleanNum, p.prize);
+        }
+      });
+    }
+
+    /* ==========================================================================
+       6-Digit Input Navigation
+       ========================================================================== */
+    const digitInputs = document.querySelectorAll(".digit-box");
+    const errorEl = document.getElementById("validation-error");
+    const checkBtn = document.getElementById("btn-check");
+    const scannerWrap = document.getElementById("scanner-wrap");
+    const resultContainer = document.getElementById("result-container");
+
+    function setupDigitInputs() {
+      digitInputs.forEach((input, index) => {
+        // Typing handler
+        input.addEventListener("input", () => {
+          hideError();
+          const val = input.value;
+
+          if (!/^\d$/.test(val)) {
+            input.value = "";
+            input.classList.remove("filled");
+            return;
+          }
+
+          input.classList.add("filled");
+
+          // Auto-advance to next box
+          if (index < digitInputs.length - 1) {
+            digitInputs[index + 1].focus();
+            digitInputs[index + 1].select();
+          }
+        });
+
+        // Keydown handler
+        input.addEventListener("keydown", (e) => {
+          hideError();
+          if (e.key === "Backspace") {
+            if (input.value === "" && index > 0) {
+              e.preventDefault();
+              digitInputs[index - 1].focus();
+              digitInputs[index - 1].value = "";
+              digitInputs[index - 1].classList.remove("filled");
+            } else {
+              input.classList.remove("filled");
+            }
+          } else if (e.key === "ArrowLeft" && index > 0) {
+            e.preventDefault();
+            digitInputs[index - 1].focus();
+          } else if (e.key === "ArrowRight" && index < digitInputs.length - 1) {
+            e.preventDefault();
+            digitInputs[index + 1].focus();
+          } else if (e.key === "Enter") {
+            e.preventDefault();
+            handleCheckNumber();
+          }
+        });
+
+        // 6-digit paste support
+        input.addEventListener("paste", (e) => {
+          e.preventDefault();
+          hideError();
+          const pasteData = (e.clipboardData || window.clipboardData).getData("text").trim();
+          const digitsOnly = pasteData.replace(/\D/g, "");
+
+          if (digitsOnly.length > 0) {
+            const startIndex = (digitsOnly.length >= 6) ? 0 : index;
+            for (let i = 0; i < digitInputs.length; i++) {
+              if (i >= startIndex && (i - startIndex) < digitsOnly.length) {
+                digitInputs[i].value = digitsOnly[i - startIndex];
+                digitInputs[i].classList.add("filled");
+              }
+            }
+            const nextFocusIndex = Math.min(startIndex + digitsOnly.length, digitInputs.length - 1);
+            digitInputs[nextFocusIndex].focus();
+          }
+        });
+
+        input.addEventListener("focus", () => {
+          input.select();
+        });
+      });
+    }
+
+    function getEnteredNumber() {
+      let num = "";
+      digitInputs.forEach(inp => num += inp.value.trim());
+      return num;
+    }
+
+    function setupButtons() {
+      if (checkBtn) {
+        checkBtn.addEventListener("click", handleCheckNumber);
+      }
+    }
+
+    function hideError() {
+      if (errorEl) errorEl.style.display = "none";
+    }
+
+    function showError(msg) {
+      if (errorEl) {
+        errorEl.textContent = msg;
+        errorEl.style.display = "block";
+      }
+    }
+
+    /* ==========================================================================
+       Number Verification & Scanner Animation
+       ========================================================================== */
+    function handleCheckNumber() {
+      hideError();
+      const enteredNumber = getEnteredNumber();
+
+      if (enteredNumber.length < 6) {
+        showError("⚠️ Please enter all 6 digits completely to verify your ticket.");
+        const firstEmpty = Array.from(digitInputs).find(inp => inp.value === "");
+        if (firstEmpty) firstEmpty.focus();
+        return;
+      }
+
+      checkBtn.disabled = true;
+      scannerWrap.style.display = "block";
+      resultContainer.style.display = "none";
+      resultContainer.innerHTML = "";
+
+      // Simulated verification sequence
+      setTimeout(() => {
+        scannerWrap.style.display = "none";
+        checkBtn.disabled = false;
+        evaluateResult(enteredNumber);
+      }, 900);
+    }
+
+    function evaluateResult(ticketNumber) {
+      const matches = prizes.filter(p => p.number.trim() === ticketNumber);
+
+      if (matches.length > 0) {
+        const winningPrize = matches[0];
+        displayWinningResult(winningPrize, ticketNumber);
+        triggerVibrationSuccess();
+        launchConfetti();
+      } else {
+        displayLosingResult(ticketNumber);
+      }
+
+      resultContainer.style.display = "block";
+      resultContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function displayWinningResult(prizeObj, ticketNumber) {
+      resultContainer.innerHTML = `
+        <div class="result-card-winning" role="alert">
+          <div class="win-badge-icon" aria-hidden="true">✓</div>
+          <div class="win-headline">🎉 CONGRATULATIONS! 🎉</div>
+          <div class="win-subheadline">YOU WON</div>
+          <div class="win-prize-title">${escapeHTML(prizeObj.prize)}: ${escapeHTML(prizeObj.title)}</div>
+          
+          ${prizeObj.image ? `
+            <div class="win-prize-image-wrap">
+              <img src="${escapeHTML(prizeObj.image)}" alt="${escapeHTML(prizeObj.title)}" class="win-prize-img" onerror="this.parentElement.style.display='none'" />
+            </div>
+          ` : ''}
+
+          <div>
+            <span class="win-number-pill" aria-label="Winning Number ${ticketNumber}">${escapeHTML(ticketNumber)}</span>
+          </div>
+          <p class="win-desc">${escapeHTML(prizeObj.description)}</p>
+
+          <div class="win-guidance-box">
+            <strong>Claim Action Required:</strong> Please contact the Barpeta Road Raas Mahotsav Committee with your original ticket to initiate your verification process.
+          </div>
+
+          <div style="max-width: 300px; margin: 0 auto;">
+            <button type="button" class="btn-pill-secondary" onclick="resetChecker()">
+              <span>Check Another Number</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function displayLosingResult(ticketNumber) {
+      resultContainer.innerHTML = `
+        <div class="result-card-losing" role="status">
+          <div style="font-size: 2rem; margin-bottom: 0.4rem;" aria-hidden="true">☘️</div>
+          <div class="lose-headline">SORRY! This Lottery Number Checker Will Active on 12 Dec 2026 10 PM.</div>
+          <div class="lose-subheadline">Number <strong>${escapeHTML(ticketNumber)}</strong>            <br>          </div> 
+          <div style="max-width: 300px; margin: 0 auto;">
+            <button type="button" class="btn-pill-primary" onclick="resetChecker()">
+              <span>CHECK ANOTHER NUMBER</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function resetChecker() {
+      digitInputs.forEach(inp => {
+        inp.value = "";
+        inp.classList.remove("filled");
+      });
+      resultContainer.style.display = "none";
+      resultContainer.innerHTML = "";
+      hideError();
+      digitInputs[0].focus();
+    }
+
+    /* Mobile Haptic Vibration,SORRY! did not match any of the winning prize draws this time. BETTER LUCK NEXT TIME. */
+    function triggerVibrationSuccess() {
+      try {
+        if ("vibrate" in navigator && typeof navigator.vibrate === "function") {
+          navigator.vibrate([100, 60, 150]);
+        }
+      } catch (err) {
+        console.debug("Vibration API unsupported.");
+      }
+    }
+
+    /* Confetti Animation */
+    function launchConfetti() {
+      const canvas = document.getElementById("confetti-canvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      const handleResize = () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      };
+      window.addEventListener("resize", handleResize, { passive: true });
+
+      const particles = [];
+      const particleCount = 75;
+      const colors = ["#fbbf24", "#f59e0b", "#10b981", "#38bdf8", "#818cf8", "#ffffff"];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: width / 2,
+          y: height / 2,
+          vx: (Math.random() - 0.5) * 18,
+          vy: (Math.random() - 0.8) * 15,
+          size: Math.random() * 7 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          rotationSpeed: (Math.random() - 0.5) * 10,
+          opacity: 1
+        });
+      }
+
+      let startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        ctx.clearRect(0, 0, width, height);
+
+        let activeCount = 0;
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.28;
+          p.vx *= 0.98;
+          p.rotation += p.rotationSpeed;
+          p.opacity = Math.max(0, 1 - elapsed / 2800);
+
+          if (p.opacity > 0 && p.y < height + 50) {
+            activeCount++;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.globalAlpha = p.opacity;
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+            ctx.restore();
+          }
+        });
+
+        if (activeCount > 0 && elapsed < 3000) {
+          requestAnimationFrame(update);
+        } else {
+          ctx.clearRect(0, 0, width, height);
+          window.removeEventListener("resize", handleResize);
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    /* Lightbox Modal Helper */
+    function openLightbox(src, alt) {
+      const modal = document.getElementById("lightbox-modal");
+      const img = document.getElementById("lightbox-img");
+      if (!modal || !img) return;
+
+      img.src = src;
+      img.alt = alt || "Enlarged document";
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox(e) {
+      if (e) e.stopPropagation();
+      const modal = document.getElementById("lightbox-modal");
+      if (!modal) return;
+
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    function escapeHTML(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+</html>

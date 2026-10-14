@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Barpeta Road Rash Mahotsav | Live Stream</title>
+  <link rel="shortcut icon" href="RashWeb/favicon.png" type="image/x-icon">
+  <meta name="description" content="Watch the official live stream of Barpeta Road Rash Mahotsav. Experience the divine celebration live from Barpeta Road, Assam." />
+  <meta name="theme-color" content="#080608" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Barpeta Road Rash Mahotsav - Live Stream" />
+  <meta property="og:description" content="Watch the celebration live from Barpeta Road, Assam." />
+  <meta property="og:image" content="RashWeb/maintext.png" />
+  <meta property="og:type" content="video.other" />
+
+  <style>
+    /* -------------------------------------------------------------
+       DESIGN TOKENS & RESET
+       ------------------------------------------------------------- */
+    :root {
+      --bg-base: #080608;
+      --bg-surface: rgba(24, 18, 23, 0.65);
+      --bg-surface-elevated: rgba(34, 25, 33, 0.85);
+      --border-subtle: rgba(255, 215, 0, 0.14);
+      --border-glow: rgba(229, 9, 20, 0.35);
+
+      --color-gold: #f5b041;
+      --color-gold-bright: #ffd166;
+      --color-gold-glow: rgba(245, 176, 65, 0.28);
+      --color-maroon: #7a1219;
+      --color-red: #e50914;
+      --color-red-glow: rgba(229, 9, 20, 0.35);
+
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #8b93a0;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      color-scheme: dark;
+      background-color: var(--bg-base);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: transparent;
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+
+    /* -------------------------------------------------------------
+       OPTIMIZED DARK + BLURRED BACKGROUND IMAGE
+       ------------------------------------------------------------- */
+    .bg-image-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('https://wallpapercave.com/wp/wp13477132.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      filter: blur(6px) brightness(0.4);
+      transform: scale(1.08); /* Prevents white/blurry borders caused by filter */
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Cinematic Ambient Atmosphere */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      max-width: 1100px;
+      height: 520px;
+      background: radial-gradient(circle at 50% 15%, rgba(229, 9, 20, 0.22) 0%, rgba(245, 176, 65, 0.16) 45%, transparent 75%);
+      z-index: -1;
+      pointer-events: none;
+      filter: blur(60px);
+      animation: ambientPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambientPulse {
+      0% { opacity: 0.65; transform: translateX(-50%) scale(0.98); }
+      100% { opacity: 0.95; transform: translateX(-50%) scale(1.05); }
+    }
+
+    /* -------------------------------------------------------------
+       LAYOUT WRAPPER
+       ------------------------------------------------------------- */
+    .app-wrapper {
+      width: 100%;
+      max-width: 960px;
+      padding: 0 16px 36px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* -------------------------------------------------------------
+       HEADER
+       ------------------------------------------------------------- */
+    .site-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      margin-bottom: 22px;
+      gap: 12px;
+      animation: fadeInDown 0.8s var(--ease-out-expo) backwards;
+    }
+
+    /* Back Button */
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-full);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.25s var(--ease-out-expo);
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .btn-back svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-gold);
+      transition: transform 0.25s ease;
+    }
+
+    .btn-back:hover {
+      background: var(--bg-surface-elevated);
+      border-color: rgba(245, 176, 65, 0.45);
+      color: var(--color-gold-bright);
+      transform: translateX(-2px);
+    }
+
+    .btn-back:hover svg {
+      transform: translateX(-3px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .brand-logo-img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1.5px solid rgba(245, 176, 65, 0.6);
+      box-shadow: 0 0 16px rgba(245, 176, 65, 0.3), 0 0 8px rgba(229, 9, 20, 0.4);
+      transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+
+    .brand:hover .brand-logo-img {
+      transform: scale(1.06) rotate(3deg);
+      box-shadow: 0 0 22px rgba(245, 176, 65, 0.5), 0 0 14px rgba(229, 9, 20, 0.6);
+    }
+
+    .brand-text-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-subtitle {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--color-gold);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .brand-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: var(--text-primary);
+    }
+
+    /* Live Badge with Multi-Pulse Radar */
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, rgba(229, 9, 20, 0.22), rgba(122, 18, 25, 0.3));
+      border: 1px solid rgba(229, 9, 20, 0.55);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #ff5252;
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.25);
+    }
+
+    .radar-wrapper {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .radar-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--color-red);
+      border-radius: 50%;
+      box-shadow: 0 0 8px #ff2a2a;
+    }
+
+    .radar-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--color-red);
+      opacity: 0.7;
+      animation: radarPulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    @keyframes radarPulse {
+      0% { transform: scale(0.8); opacity: 0.9; }
+      70% { transform: scale(2.4); opacity: 0; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    /* -------------------------------------------------------------
+       HERO & MAIN SECTION
+       ------------------------------------------------------------- */
+    .main-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-banner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s 0.1s var(--ease-out-expo) backwards;
+    }
+
+    /* Non-clickable, Perfectly Sized Main Title Image */
+    .main-title-wrapper {
+      width: 100%;
+      max-width: 540px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 8px;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .main-title-img {
+      width: 100%;
+      height: auto;
+      max-height: 110px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 25px rgba(245, 176, 65, 0.35));
+      pointer-events: none;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 10px;
+      padding: 4px 12px;
+      background: rgba(245, 176, 65, 0.1);
+      border: 1px solid rgba(245, 176, 65, 0.3);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-gold-bright);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .status-ping {
+      width: 6px;
+      height: 6px;
+      background: var(--color-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--color-gold);
+    }
+
+    /* -------------------------------------------------------------
+       RESPONSIVE 16:9 VIDEO CONTAINER
+       ------------------------------------------------------------- */
+    .player-outer-shell {
+      width: 100%;
+      position: relative;
+      border-radius: var(--radius-md);
+      padding: 1.5px;
+      background: linear-gradient(145deg, rgba(245, 176, 65, 0.4), rgba(229, 9, 20, 0.45) 50%, rgba(255, 255, 255, 0.08) 100%);
+      box-shadow:
+        0 20px 45px -12px rgba(0, 0, 0, 0.85),
+        0 0 45px -10px var(--color-red-glow),
+        0 0 35px -12px var(--color-gold-glow);
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s 0.2s var(--ease-out-expo) backwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .player-container {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000000;
+      border-radius: calc(var(--radius-md) - 1.5px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .player-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .player-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      background: radial-gradient(circle at center, #1b1218 0%, #0a080a 100%);
+      color: var(--text-secondary);
+    }
+
+    .player-fallback svg {
+      width: 48px;
+      height: 48px;
+      stroke: var(--color-gold);
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+
+    .player-fallback p {
+      font-size: 0.92rem;
+      max-width: 320px;
+    }
+
+    /* -------------------------------------------------------------
+       ACTIONS & META
+       ------------------------------------------------------------- */
+    .stream-meta {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      text-align: center;
+      animation: fadeInUp 0.8s 0.3s var(--ease-out-expo) backwards;
+    }
+
+    .stream-desc {
+      font-size: clamp(0.92rem, 3vw, 1.05rem);
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .actions-group {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 20px;
+      min-height: 48px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      touch-action: manipulation;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.6s ease;
+    }
+
+    .btn:hover::after {
+      left: 150%;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 3px;
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #a71821 0%, #e50914 100%);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 6px 20px rgba(229, 9, 20, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #c01a24 0%, #f71924 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 14px rgba(229, 9, 20, 0.3);
+    }
+
+    /* -------------------------------------------------------------
+       COMPACT EVENT CARD SECTION
+       ------------------------------------------------------------- */
+    .event-card {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      animation: fadeInUp 0.8s 0.4s var(--ease-out-expo) backwards;
+      transition: transform 0.25s var(--ease-out-expo), border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .event-card:hover {
+      border-color: rgba(245, 176, 65, 0.3);
+      background: var(--bg-surface-elevated);
+      transform: translateY(-2px);
+    }
+
+    .event-icon-box {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, rgba(245, 176, 65, 0.15), rgba(229, 9, 20, 0.2));
+      border: 1px solid rgba(245, 176, 65, 0.35);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .event-icon-box svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--color-gold);
+    }
+
+    .event-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .event-card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .event-card-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.82rem;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    .event-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* -------------------------------------------------------------
+       FOOTER
+       ------------------------------------------------------------- */
+    .site-footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      animation: fadeIn 1s 0.5s ease backwards;
+    }
+
+    /* -------------------------------------------------------------
+       TOAST NOTIFICATION
+       ------------------------------------------------------------- */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px) scale(0.9);
+      background: rgba(18, 14, 18, 0.95);
+      color: #ffffff;
+      padding: 11px 22px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(245, 176, 65, 0.45);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85), 0 0 20px var(--color-gold-glow);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    /* -------------------------------------------------------------
+       KEYFRAME ANIMATIONS
+       ------------------------------------------------------------- */
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(18px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* -------------------------------------------------------------
+       MOBILE OPTIMIZATIONS (320px - 480px)
+       ------------------------------------------------------------- */
+    @media (max-width: 480px) {
+      .app-wrapper {
+        padding: 0 12px 28px 12px;
+      }
+
+      .site-header {
+        padding: 12px 0;
+        margin-bottom: 16px;
+      }
+
+      .btn-back {
+        padding: 6px 10px;
+        font-size: 0.78rem;
+      }
+
+      .brand-logo-img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .brand-name {
+        font-size: 0.88rem;
+      }
+
+      .main-title-wrapper {
+        max-width: 100%;
+        padding: 0 4px;
+      }
+
+      .main-title-img {
+        max-height: 85px;
+      }
+
+      .actions-group {
+        max-width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 13px 16px;
+      }
+
+      .event-card {
+        padding: 14px;
+        align-items: flex-start;
+      }
+    }
+
+    /* Ultra-small screens (320px - 350px) */
+    @media (max-width: 350px) {
+      .brand-subtitle {
+        font-size: 0.58rem;
+      }
+      .brand-name {
+        font-size: 0.8rem;
+      }
+      .main-title-img {
+        max-height: 70px;
+      }
+      .live-badge {
+        padding: 4px 8px;
+        font-size: 0.68rem;
+      }
+      .btn-back span {
+        display: none; /* Shows only back arrow icon on ultra-small screens */
+      }
+    }
+
+    /* -------------------------------------------------------------
+       ACCESSIBILITY: REDUCED MOTION
+       ------------------------------------------------------------- */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Image with Blur & Dark Overlay -->
+  <div class="bg-image-layer" aria-hidden="true"></div>
+
+  <!-- Ambient Light Effect -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <div class="app-wrapper">
+    
+    <!-- 1. HEADER WITH BACK BUTTON & LOGO -->
+    <header class="site-header" role="banner">
+      
+      <!-- Back Button to index.html -->
+      <a href="index.html" class="btn-back" aria-label="Back to home page">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back</span>
+      </a>
+
+      <div class="brand">
+        <img 
+          src="RashWeb/favicon.png" 
+          alt="Rash Mahotsav Logo" 
+          class="brand-logo-img" 
+          width="42" 
+          height="42" 
+          loading="eager"
+          draggable="false"
+        />
+        <div class="brand-text-container">
+          <span class="brand-subtitle">Official Live Stream</span>
+          <span class="brand-name">Rash Mahotsav</span>
+        </div>
+      </div>
+
+      <div class="live-badge" aria-label="Stream Status: Live">
+        <div class="radar-wrapper" aria-hidden="true">
+          <span class="radar-ring"></span>
+          <span class="radar-dot"></span>
+        </div>
+        <span>LIVE</span>
+      </div>
+    </header>
+
+    <!-- 2. MAIN LIVE STREAM SECTION -->
+    <main class="main-section" role="main">
+      
+      <!-- Non-clickable Main Text Photo -->
+      <section class="hero-banner" aria-label="Hero Title">
+        <div class="main-title-wrapper" aria-hidden="true">
+          <img 
+            src="RashWeb/maintext.png" 
+            alt="Barpeta Road Rash Mahotsav" 
+            class="main-title-img"
+            loading="eager"
+            draggable="false"
+          />
+        </div>
+        <!-- Screen reader accessible text -->
+        <h1 style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;">
+          Barpeta Road Rash Mahotsav Live Stream
+        </h1>
+
+        <div class="status-tag">
+          <span class="status-ping" aria-hidden="true"></span>
+          <span>LIVE NOW</span>
+        </div>
+      </section>
+
+      <!-- Responsive 16:9 YouTube Player -->
+      <section class="player-outer-shell">
+        <div class="player-container" id="playerWrapper" aria-label="Live Video Stream">
+          <!-- Injected dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- Stream Info & Share Action Button -->
+      <div class="stream-meta">
+        <p class="stream-desc">Watch the Barpeta Road Rash Mahotsav live.</p>
+        
+        <div class="actions-group">
+          <!-- Share Button -->
+          <button type="button" class="btn btn-primary" id="shareBtn" aria-label="Share live stream">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span>Share Live</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. COMPACT EVENT DETAILS CARD -->
+      <section class="event-card" aria-label="Event Details">
+        <div class="event-icon-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+        </div>
+        <div class="event-card-content">
+          <h2 class="event-card-title">Barpeta Road Rash Mahotsav</h2>
+          <span class="event-card-location">📍 Barpeta Road, Assam</span>
+          <p class="event-card-desc">Experience the celebration live from wherever you are.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <p>© Barpeta Road Rash Mahotsav. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--color-gold)">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMessage">Link copied to clipboard!</span>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    /* =========================================================================
+       1. YOUTUBE CONFIGURATION (Paste your YouTube Live link or ID below)
+       ========================================================================= */
+    const YOUTUBE_URL = "PASTE_YOUR_YOUTUBE_LIVE_LINK_HERE";
+
+    /* =========================================================================
+       2. YOUTUBE ID EXTRACTOR & EMBED ENGINE
+       ========================================================================= */
+    function extractYouTubeId(url) {
+      if (!url || typeof url !== 'string') return null;
+      
+      const cleanUrl = url.trim();
+
+      // Check if it is a standalone 11-char ID
+      if (/^[a-zA-Z0-9_-]{11}$/.test(cleanUrl)) {
+        return cleanUrl;
+      }
+
+      // Matches youtu.be/, watch?v=, embed/, live/, and /v/
+      const regExp = /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|live\/|watch\?v=|watch\?.+&v=))([a-zA-Z0-9_-]{11})/;
+      const match = cleanUrl.match(regExp);
+
+      return (match && match[1]) ? match[1] : null;
+    }
+
+    function initPlayer() {
+      const playerWrapper = document.getElementById('playerWrapper');
+      const videoId = extractYouTubeId(YOUTUBE_URL);
+
+      if (videoId && videoId !== "PASTE_YOUR_YOUTUBE_LIVE_LINK_HERE") {
+        const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1&modestbranding=1`;
+
+        playerWrapper.innerHTML = `
+          <iframe 
+            class="player-iframe" 
+            src="${embedUrl}" 
+            title="Barpeta Road Rash Mahotsav Live Stream" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        `;
+      } else {
+        // Fallback display when no valid stream is configured
+        playerWrapper.innerHTML = `
+          <div class="player-fallback">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+              <line x1="7" y1="2" x2="7" y2="22"></line>
+              <line x1="17" y1="2" x2="17" y2="22"></line>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <line x1="2" y1="7" x2="7" y2="7"></line>
+              <line x1="2" y1="17" x2="7" y2="17"></line>
+              <line x1="17" y1="17" x2="22" y2="17"></line>
+              <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+            <p><strong>Live Stream Starting Soon</strong><br><span style="font-size: 0.8rem; opacity: 0.7;">Stay tuned for the divine celebration live broadcast.</span></p>
+          </div>
+        `;
+      }
+    }
+
+    /* =========================================================================
+       3. SHARING & TOAST SYSTEM
+       ========================================================================= */
+    let toastTimer;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    function getStreamUrl() {
+      const videoId = extractYouTubeId(YOUTUBE_URL);
+      if (videoId && videoId !== "PASTE_YOUR_YOUTUBE_LIVE_LINK_HERE") {
+        return `https://youtu.be/${videoId}`;
+      }
+      return window.location.href;
+    }
+
+    async function handleShare() {
+      const shareUrl = getStreamUrl();
+      const shareData = {
+        title: 'Barpeta Road Rash Mahotsav | Live Stream',
+        text: 'Watch the Barpeta Road Rash Mahotsav live.',
+        url: shareUrl
+      };
+
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        try {
+          await navigator.share(shareData);
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            copyToClipboard(shareUrl);
+          }
+        }
+      } else {
+        copyToClipboard(shareUrl);
+      }
+    }
+
+    function copyToClipboard(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(() => showToast('Live stream link copied!'))
+          .catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const input = document.createElement('textarea');
+      input.value = text;
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+      input.focus();
+      input.select();
+      try {
+        document.execCommand('copy');
+        showToast('Live stream link copied!');
+      } catch (err) {
+        showToast('Failed to copy link.');
+      }
+      document.body.removeChild(input);
+    }
+
+    /* =========================================================================
+       4. INITIALIZATION
+       ========================================================================= */
+    document.addEventListener('DOMContentLoaded', () => {
+      initPlayer();
+      document.getElementById('shareBtn').addEventListener('click', handleShare);
+    });
+  </script>
+</body>
+</html>

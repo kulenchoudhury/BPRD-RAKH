@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committees Directory | Barpeta Road Rash Mohatsav</title>
+    <link rel="shortcut icon" href="RashWeb/favicon.png" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0d14;
+            --surface: rgba(16, 22, 34, 0.75);
+            --surface-hover: rgba(26, 35, 54, 0.85);
+            --surface-card: rgba(18, 24, 38, 0.65);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(245, 158, 11, 0.35);
+            --gold: #f59e0b;
+            --gold-light: #fde68a;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --font-title: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --radius-full: 9999px;
+            --transition: all 0.25s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        /* Subtle Fullscreen Background */
+        .bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background-image: url('https://wallpapers.com/images/hd/colorful-radha-and-krishna-4k-1tyce74ewnc2ao9a.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.28) saturate(0.9);
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: linear-gradient(180deg, rgba(10, 13, 20, 0.75) 0%, rgba(10, 13, 20, 0.95) 100%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 4rem;
+        }
+
+        /* Top Navigation Bar with Back Button */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 0.6rem 1.1rem;
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-full);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .back-btn i {
+            color: var(--gold);
+            transition: transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--surface-hover);
+            border-color: var(--border-gold);
+            color: var(--gold-light);
+            transform: translateX(-3px);
+        }
+
+        .back-btn:hover i {
+            transform: translateX(-3px);
+        }
+
+        .event-tag {
+            font-size: 0.82rem;
+            color: var(--gold-light);
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        /* Clean Header */
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-family: var(--font-title);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: #fff;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search & Filter Bar */
+        .search-container {
+            max-width: 540px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 0.85rem 1rem 0.85rem 2.8rem;
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-full);
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .search-container input:focus {
+            border-color: var(--gold);
+            background: rgba(22, 30, 48, 0.9);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+
+        /* Committee Switcher Tabs */
+        .committee-tabs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.6rem;
+            margin-bottom: 2.2rem;
+            background: rgba(12, 16, 26, 0.5);
+            padding: 0.45rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .tab-btn i {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .tab-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .tab-btn.active {
+            background: var(--surface);
+            border-color: var(--border-gold);
+            color: var(--gold-light);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .tab-btn.active i {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        /* Committee Pages */
+        .committee-view {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .committee-view.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Banner Header for Current Committee */
+        .view-header {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--gold);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .view-header h2 {
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            color: #fff;
+        }
+
+        .view-header span {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        /* Group Headings */
+        .group-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold-light);
+            margin: 1.8rem 0 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .group-title i {
+            font-size: 0.85rem;
+            color: var(--gold);
+        }
+
+        /* Grids */
+        .grid-featured {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .grid-compact {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.75rem;
+        }
+
+        /* Clean Member Cards */
+        .member-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            backdrop-filter: blur(8px);
+            transition: var(--transition);
+        }
+
+        .member-card:hover {
+            background: var(--surface-hover);
+            border-color: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+        }
+
+        .member-card.featured {
+            background: rgba(245, 158, 11, 0.05);
+            border-color: rgba(245, 158, 11, 0.25);
+        }
+
+        .member-card.featured:hover {
+            border-color: var(--gold);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .featured .card-icon {
+            background: rgba(245, 158, 11, 0.12);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .card-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-role {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gold-light);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .card-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-sub {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-top: 0.1rem;
+            display: block;
+        }
+
+        /* Advisory Board Item */
+        .advisory-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-color);
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .advisory-card:hover {
+            background: var(--surface-hover);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .advisory-card i {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .advisory-card span {
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Empty Search Result */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--border-color);
+            margin: 1.5rem 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3.5rem;
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem 0.85rem 3rem;
+            }
+
+            .committee-tabs {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-btn {
+                justify-content: flex-start;
+                padding: 0.7rem 0.9rem;
+            }
+
+            .grid-featured, .grid-cards, .grid-compact {
+                grid-template-columns: 1fr;
+            }
+
+            .view-header {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Layer -->
+    <div class="bg-layer"></div>
+    <div class="bg-overlay"></div>
+
+    <div class="container">
+        <!-- Top Navbar with Back Button -->
+        <div class="top-nav">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+            <div class="event-tag">
+                <i class="fa-solid fa-om"></i>
+                <span>Barpeta Road Rash Mohatsav</span>
+            </div>
+        </div>
+
+        <!-- Clean Header -->
+        <header>
+            <h1>Committee Directory</h1>
+            <p>Official list of executive members, office bearers, and heritage committees.</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Search members, designations, or roles..." onkeyup="handleSearch()">
+        </div>
+
+        <!-- Committee Switcher Tabs -->
+        <nav class="committee-tabs" role="tablist">
+            <button class="tab-btn active" onclick="switchTab(0, this)">
+                <i class="fa-solid fa-landmark"></i>
+                <span>1st Athiyabari Barwari (1929)</span>
+            </button>
+            <button class="tab-btn" onclick="switchTab(1, this)">
+                <i class="fa-solid fa-gopuram"></i>
+                <span>Rash Mandir Parichalana</span>
+            </button>
+            <button class="tab-btn" onclick="switchTab(2, this)">
+                <i class="fa-solid fa-hands-praying"></i>
+                <span>98th Sarbojanin Committee (2026)</span>
+            </button>
+            <button class="tab-btn" onclick="switchTab(3, this)">
+                <i class="fa-solid fa-gift"></i>
+                <span>Upahar Patra Khel (2026)</span>
+            </button>
+        </nav>
+
+        <!-- No Results Box -->
+        <div id="noResults" class="no-results">
+            <p><i class="fa-solid fa-circle-exclamation" style="margin-right: 6px;"></i> No members matching your search query.</p>
+        </div>
+
+        <!-- ================= TAB 1: 1st Athiyabari Barwari Rash Puja Committee (1929) ================= -->
+        <div class="committee-view active" id="view-0">
+            <div class="view-header">
+                <h2>1st Athiyabari Barwari Rash Puja Committee</h2>
+                <span>Heritage Foundation • Established 1929</span>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-crown"></i> Core Leadership</div>
+            <div class="grid-featured">
+                <div class="member-card featured member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">President</span>
+                        <div class="card-name">Ramlal Boksi</div>
+                        <span class="card-sub">Station Master</span>
+                    </div>
+                </div>
+
+                <div class="member-card featured member-item">
+                    <div class="card-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Secretary and Treasurer</span>
+                        <div class="card-name">Bhupen Bhattacharya</div>
+                        <span class="card-sub">General Administration</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-users"></i> Founding Members</div>
+            <div class="grid-cards">
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Vinod Bihari Raharai</div>
+                        <span class="card-sub">Guagacha</span>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Pokhanmal Agarwal</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Jatindra Narayan Biswas</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Mahesh Chandra Pathak</div>
+                        <span class="card-sub">Mouzadar</span>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Hargobind Das</div>
+                        <span class="card-sub">Hat Mahaldar</span>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Matilal Sarkar</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Bimal Raharai</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Aditya Kabiraj</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Tarakant Mandal</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Sarat Koch</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Kalicharan Koch</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Fani Sarkar</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Hiralal Sarkar</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Satya Sannyasi</div>
+                    </div>
+                </div>
+                <div class="member-card member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Member</span>
+                        <div class="card-name">Dr. Ashwini Majumder</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 2: Barpeta Road Rash Mandir Parichalana Committee ================= -->
+        <div class="committee-view" id="view-1">
+            <div class="view-header">
+                <h2>Barpeta Road Rash Mandir Parichalana Committee</h2>
+                <span>Governing & Managing Body</span>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-scale-balanced"></i> Advisory Board</div>
+            <div class="grid-cards" style="margin-bottom: 1.5rem;">
+                <div class="advisory-card member-item">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Shri Ranjeet Kumar Das <small style="display:block; color:var(--text-muted);">(Hon’ble Speaker, Asom Bidhan Sabha)</small></span>
+                </div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-building-columns"></i><span>President, Barpeta Road Municipality</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-building-columns"></i><span>Vice-President, Barpeta Road Municipality</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-briefcase"></i><span>President, Greater Barpeta Road Traders Association</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-store"></i><span>President, Municipal Market Traders Association</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-shield-halved"></i><span>Office In-Charge, Barpeta Road Police Station</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-city"></i><span>Commissioner, 6th Ward</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-user"></i><span>Mr. Phulen Das</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-user"></i><span>Mr. Sambhunath Saha</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-user"></i><span>Shri Shivratan Rathi</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-user"></i><span>Mr. Pulak Chowdhury</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-user-doctor"></i><span>Dr. Shambhucharan Singh</span></div>
+                <div class="advisory-card member-item"><i class="fa-solid fa-user"></i><span>Mr. Dilip Saha</span></div>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-crown"></i> Executive Leadership</div>
+            <div class="grid-featured">
+                <div class="member-card featured member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">President</span>
+                        <div class="card-name">Mr. Montu Oja</div>
+                    </div>
+                </div>
+                <div class="member-card featured member-item">
+                    <div class="card-icon"><i class="fa-solid fa-vault"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Treasurer</span>
+                        <div class="card-name">Alok Saha</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-sitemap"></i> Vice Presidents & Secretaries</div>
+            <div class="grid-cards">
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-user-shield"></i></div><div class="card-details"><span class="card-role">Vice-President</span><div class="card-name">Mr. Hemen Das</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-user-shield"></i></div><div class="card-details"><span class="card-role">Vice-President</span><div class="card-name">Shri Devraj Chetri</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-user-shield"></i></div><div class="card-details"><span class="card-role">Vice-President</span><div class="card-name">Mr. Rupanjit Das</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-pen-fancy"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Krishna Prasad</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-pen-fancy"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Jintu Das</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div><div class="card-details"><span class="card-role">Assistant Secretary</span><div class="card-name">Ranjit Talukdar</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div><div class="card-details"><span class="card-role">Assistant Secretary</span><div class="card-name">Ramen Sharma</div></div></div>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-diagram-project"></i> Development & Office Secretaries</div>
+            <div class="grid-cards">
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-helmet-safety"></i></div><div class="card-details"><span class="card-role">Convenor, Development</span><div class="card-name">Arup Bayan</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-helmet-safety"></i></div><div class="card-details"><span class="card-role">Convenor, Development</span><div class="card-name">Kulen Choudhury</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-helmet-safety"></i></div><div class="card-details"><span class="card-role">Convenor, Development</span><div class="card-name">Jayant Das</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-building"></i></div><div class="card-details"><span class="card-role">Office Secretary</span><div class="card-name">Sunil Deb Nath</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-building"></i></div><div class="card-details"><span class="card-role">Office Secretary</span><div class="card-name">Babul Chandra Deka</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-building"></i></div><div class="card-details"><span class="card-role">Office Secretary</span><div class="card-name">Alkesh Bayan</div></div></div>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-users"></i> Executive Members</div>
+            <div class="grid-compact">
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Purushattam Agrawal</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Ranjit Das</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Jagdish Kalita</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Chandan Kalita</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Ramen Das</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Subhash Mandal</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Ratan Majumder</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Ashok Nath</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Swapan Saha</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Mahananda Talukdar</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Binay Saha (Sujit)</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Diganta Das</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Prafulla Saha</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Munindra Das</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Devdas Sarkar</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Subhash Das</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Pradyut Roy</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Chittaranjan Saha</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Baijayanta Deuri</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Niranjan Sarkar</div></div></div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 3: 98th Barpeta Road Sarbojanin Rash Mohatsav Committee (2026) ================= -->
+        <div class="committee-view" id="view-2">
+            <div class="view-header">
+                <h2>98th Barpeta Road Sarbojanin Rash Mahotsav Committee</h2>
+                <span>Celebration Year: 2026</span>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-crown"></i> Executive Leadership</div>
+            <div class="grid-featured">
+                <div class="member-card featured member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">President</span>
+                        <div class="card-name">Rajesh Sarkar</div>
+                    </div>
+                </div>
+                <div class="member-card featured member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Working President</span>
+                        <div class="card-name">Dr. Rupanjit Das</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-feather-pointed"></i> General Secretariat</div>
+            <div class="grid-cards">
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-signature"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Chandan Kalita</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-signature"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Babul Chandra Deka</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-signature"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Jayanta Das</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-signature"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Hiranmoy Gayan</div></div></div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 4: Upahar Patra Khel Parichalana Committee (2026) ================= -->
+        <div class="committee-view" id="view-3">
+            <div class="view-header">
+                <h2>Upahar Patra Khel Parichalana Committee</h2>
+                <span>Event Organization Committee • 2026</span>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-crown"></i> Core Leadership</div>
+            <div class="grid-featured">
+                <div class="member-card featured member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">President</span>
+                        <div class="card-name">Hemen Das</div>
+                    </div>
+                </div>
+                <div class="member-card featured member-item">
+                    <div class="card-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <div class="card-details">
+                        <span class="card-role">Working President</span>
+                        <div class="card-name">Arup Bayan</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-feather-pointed"></i> General Secretaries</div>
+            <div class="grid-cards">
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-signature"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Diganta Das</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-signature"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Ramen Sarma</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-signature"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Kulen Choudhury</div></div></div>
+                <div class="member-card member-item"><div class="card-icon"><i class="fa-solid fa-signature"></i></div><div class="card-details"><span class="card-role">General Secretary</span><div class="card-name">Binay Saha</div></div></div>
+            </div>
+
+            <div class="group-title"><i class="fa-solid fa-users"></i> Executive Members</div>
+            <div class="grid-compact">
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Suresh Jain</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Arun Jain</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Uttam Saha</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Mrinalkanti Das</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Sanjeet Kr. Sarma</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Anupam Bora</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Punu Kalita</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Kuldeep Das</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Ramen Kalita</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Banikanta Haloi</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Bhrigu Nath</div></div></div>
+                <div class="member-card member-item"><div class="card-details"><span class="card-role">Executive Member</span><div class="card-name">Bishnu Saha</div></div></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© Barpeta Road Sarbojanin Rash Mahotsav Samiti</p>
+        </footer>
+    </div>
+
+    <!-- Tab Switching & Instant Search Logic -->
+    <script>
+        function switchTab(index, button) {
+            // Update Active Tab Button
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Switch Active View
+            document.querySelectorAll('.committee-view').forEach(view => view.classList.remove('active'));
+            const activeView = document.getElementById(`view-${index}`);
+            if (activeView) {
+                activeView.classList.add('active');
+            }
+
+            // Re-apply current search query
+            handleSearch();
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const activeView = document.querySelector('.committee-view.active');
+            if (!activeView) return;
+
+            const items = activeView.querySelectorAll('.member-item');
+            let matchCount = 0;
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = "";
+                    matchCount++;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            // Adjust group title visibility based on matches
+            const titles = activeView.querySelectorAll('.group-title');
+            titles.forEach(title => {
+                let next = title.nextElementSibling;
+                let hasVisible = false;
+                while (next && !next.classList.contains('group-title')) {
+                    if (next.querySelectorAll) {
+                        const visibleInGroup = Array.from(next.querySelectorAll('.member-item')).filter(el => el.style.display !== 'none');
+                        if (visibleInGroup.length > 0) hasVisible = true;
+                    }
+                    next = next.nextElementSibling;
+                }
+                title.style.display = (query === "" || hasVisible) ? "" : "none";
+            });
+
+            const noResults = document.getElementById('noResults');
+            noResults.style.display = (matchCount === 0 && query !== "") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
